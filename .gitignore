@@ -1,3 +1,4 @@
 CASIA2/
 output/
 pki/
+# Ignore all files in the CASIA2 directory
