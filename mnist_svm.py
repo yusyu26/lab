@@ -1,10 +1,3 @@
-# ============================================
-# mnist_svm.py
-# ============================================
-# - MNISTデータセットを使い、"0 vs 1" の手書き数字データでSVM分類
-# - torchvisionからMNISTをロード
-# - 各クラス5枚ずつ訓練に使用し、学習後テストセットからランダムに1枚選んで表示
-
 import os
 import random
 import numpy as np
@@ -24,7 +17,7 @@ def main():
     # 1) MNISTデータセットをロード
     transform = transforms.Compose([
         transforms.ToTensor(),
-        transforms.Normalize((0.1307,), (0.3081,))  # MNISTの標準的な正規化パラメータ
+        transforms.Normalize((0.1307,), (0.3081,))
     ])
 
     # 訓練データとテストデータをダウンロード
@@ -42,15 +35,15 @@ def main():
         transform=transform
     )
 
-    # 2) "0 vs 1" のサンプルのみ抽出
-    # 訓練データから0と1のインデックスを抽出
+    # 2) 指定したラベルのみ抽出
+    # 訓練データから指定したラベルのインデックスを抽出
     train_indices_a = [i for i, (_, label) in enumerate(train_dataset) if label == label_a]
     train_indices_b = [i for i, (_, label) in enumerate(train_dataset) if label == label_b]
 
     print(f"[INFO] 訓練データ内の数字{label_a}のサンプル数: {len(train_indices_a)}")
     print(f"[INFO] 訓練データ内の数字{label_b}のサンプル数: {len(train_indices_b)}")
 
-    # テストデータから0と1のみを抽出
+    # テストデータから指定したラベルのみを抽出
     test_indices = [i for i, (_, label) in enumerate(test_dataset) if label in target_labels]
     print(f"[INFO] テストデータ内の{label_a}と{label_b}のサンプル数: {len(test_indices)}")
 
