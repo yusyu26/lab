@@ -33,7 +33,9 @@ RUN pip install --no-cache-dir \
         matplotlib \
         opencv-python \
         torch \
-        torchvision
+        torchvision \
+        Pillow \
+        ruff
 
 # （もし後で GLCM などを試したい場合は scikit-image も追加してください）
 # RUN pip install --no-cache-dir scikit-image
