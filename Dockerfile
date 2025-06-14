@@ -31,7 +31,9 @@ RUN pip install --no-cache-dir \
         numpy \
         scikit-learn \
         matplotlib \
-        opencv-python
+        opencv-python \
+        torch \
+        torchvision
 
 # （もし後で GLCM などを試したい場合は scikit-image も追加してください）
 # RUN pip install --no-cache-dir scikit-image
