@@ -3,3 +3,4 @@ pkl/
 data/
 disused/
 command.txt
+.ruff_cache/

@@ -30,6 +30,7 @@ WORKDIR /app
 RUN pip install --no-cache-dir \
         numpy \
         scikit-learn \
+        scikit-image \
         matplotlib \
         opencv-python \
         torch \
